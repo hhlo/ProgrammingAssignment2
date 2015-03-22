@@ -1,3 +1,6 @@
+
+## Create makeCacheMatrix ##
+
 makeCacheMatrix <- function(x=matrix()){
 invr<- NULL
 set<- function(y){
@@ -11,6 +14,8 @@ getinverse<- function()invr
 
 list(set = set, get = get, setinverse = setinverse, getinverse = getinverse)
 }
+
+## Create cacheSolve ##
 
 cacheSolve<- function(x,...){
 invr<- x$getinverse()
@@ -26,6 +31,8 @@ x$setinverse(invr)
 return(invr)
 }
 
+
+## Test Run Sample ###
 sample<-matrix(runif(4,25,50),2,2)
 sampleCached <- makeCacheMatrix(test)
 sample
